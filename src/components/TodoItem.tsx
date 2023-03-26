@@ -1,44 +1,35 @@
-import React from "react";
-import Todo from "../types/todo";
-import styles from "../styles/App.module.css";
+import Todo  from "../types/todo";
+import { Checkbox, ListItem, ListItemText, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-interface TodoItemProps {
+type Props = {
   todo: Todo;
   toggleComplete: (id: number) => void;
   deleteTodo: (id: number) => void;
-}
+};
 
-const TodoItem: React.FC<TodoItemProps> = ({
-  todo,
-  toggleComplete,
-  deleteTodo,
-}) => {
-  const handleCheckboxChange = () => {
-    toggleComplete(todo.id);
-  };
-  const handleDeleteClick = () => {
-    deleteTodo(todo.id);
-  };
+const TodoItem: React.FC<Props> = ({ todo, toggleComplete, deleteTodo }) => {
   return (
-    <div className={styles.todoItem}>
-      <input
-        type="checkbox"
+    <ListItem   sx={{
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+        marginBottom: 1,
+        borderRadius: 1,
+      }}>
+      <Checkbox
         checked={todo.completed}
-        onChange={handleCheckboxChange}
+        onChange={() => toggleComplete(todo.id)}
       />
-      <span
-        style={{
-          textDecoration: todo.completed ? "line-through" : "none",
-          marginLeft: "10px",
-          fontFamily: "monospace",
-        }}
-      >
-        {todo.title}
-      </span>
-      <button className={styles.deleteButton} onClick={handleDeleteClick}>
-        Delete
-      </button>
-    </div>
+      <ListItemText
+        primary={todo.title}
+        sx={{
+            textDecoration: todo.completed ? "line-through" : "none",
+            color: "white",
+          }}
+      />
+      <IconButton edge="end" onClick={() => deleteTodo(todo.id)} sx={{color:"red"}}>
+        <DeleteIcon />
+      </IconButton>
+    </ListItem>
   );
 };
 
