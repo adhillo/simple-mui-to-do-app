@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TodoItem from "../components/TodoItem";
 import Todo from "../types/todo";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/App.module.css";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -35,18 +35,18 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.topContainer}>
-      <div className={styles.title}>
-        <h1> Simple To Do App</h1>
-      </div>
-      <form onSubmit={addTodo} className={styles.formInput}>
+    <div className={styles.container}>
+      <h1 className={styles.heading}> Simple To Do App</h1>
+
+      <form onSubmit={addTodo} className={`${styles.flex} ${styles.justifyCenter}`}>
         <input
           type="text"
           placeholder="Enter a new task"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          className={styles.formInput}
         ></input>
-        <button type="submit">Add</button>
+        <button type="submit" className={styles.formButton}>Add</button>
       </form>
       <div>
         {todos.map((todo) => (

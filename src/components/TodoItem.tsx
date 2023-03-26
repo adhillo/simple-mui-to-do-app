@@ -1,6 +1,6 @@
 import React from "react";
 import Todo from "../types/todo";
-import styles from "./TodoItem.module.css";
+import styles from "../styles/App.module.css";
 
 interface TodoItemProps {
   todo: Todo;
@@ -20,7 +20,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
     deleteTodo(todo.id);
   };
   return (
-    <div>
+    <div className={styles.todoItem}>
       <input
         type="checkbox"
         checked={todo.completed}
@@ -34,10 +34,10 @@ const TodoItem: React.FC<TodoItemProps> = ({
         }}
       >
         {todo.title}
-        <button className={styles.deleteButton} onClick={handleDeleteClick}>
-          Delete
-        </button>
       </span>
+      <button className={styles.deleteButton} onClick={handleDeleteClick}>
+        Delete
+      </button>
     </div>
   );
 };

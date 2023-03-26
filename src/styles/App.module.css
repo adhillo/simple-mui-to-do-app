@@ -1,0 +1,82 @@
+.container {
+    font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #36393f;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .justifyCenter {
+    justify-content: center;
+  }
+  
+  .formInput {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #72767d;
+    border-radius: 3px;
+    background-color: #40444b;
+    color: white;
+    outline: none;
+    margin: 1rem;
+  }
+  
+  .formInput::placeholder {
+    color: #72767d;
+  }
+  
+  .formButton {
+    background-color: #7289da;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s;
+    margin: 1rem;
+  }
+  
+  .formButton:hover {
+    background-color: #5a7bb6;
+  }
+  
+  .todoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #40444b;
+    border-radius: 3px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .deleteButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c0392b;
+  }
+  
