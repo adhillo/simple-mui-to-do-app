@@ -1,0 +1,9 @@
+.deleteButton {
+    background-color: lightsalmon;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    width: fit-content;
+    border-radius: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
