@@ -15,7 +15,7 @@ export default function Home() {
 
     const newTodo: Todo = {
       id: Date.now(),
-      title: input,
+      task: input,
       completed: false,
     };
 
@@ -57,6 +57,7 @@ export default function Home() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           label="Enter a new task"
+          autoComplete='off'
           variant="outlined"
                  sx={{
             marginRight: 1,

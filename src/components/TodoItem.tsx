@@ -20,7 +20,7 @@ const TodoItem: React.FC<Props> = ({ todo, toggleComplete, deleteTodo }) => {
         onChange={() => toggleComplete(todo.id)}
       />
       <ListItemText
-        primary={todo.title}
+        primary={todo.task}
         sx={{
             textDecoration: todo.completed ? "line-through" : "none",
             color: "white",
