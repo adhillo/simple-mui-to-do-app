@@ -20,7 +20,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
     deleteTodo(todo.id);
   };
   return (
-    <div>
+    <div className={styles.toDoCard}>
       <input
         type="checkbox"
         checked={todo.completed}
@@ -34,10 +34,10 @@ const TodoItem: React.FC<TodoItemProps> = ({
         }}
       >
         {todo.title}
-        <button className={styles.deleteButton} onClick={handleDeleteClick}>
-          Delete
-        </button>
       </span>
+      <button className={styles.deleteButton} onClick={handleDeleteClick}>
+        X
+      </button>
     </div>
   );
 };
