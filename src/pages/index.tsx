@@ -73,6 +73,11 @@ export default function Home() {
                 borderColor: "white",
               },
             },
+            "& .MuiOutlinedInput-root:hover": {
+              "& fieldset": {
+                borderColor: "green",
+              },
+            },
             "& .MuiInputLabel-root": {
               color: "grey",
             },
