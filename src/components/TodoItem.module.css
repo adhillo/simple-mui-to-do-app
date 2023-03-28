@@ -1,3 +1,8 @@
+.toDoCard {
+    display:flex;
+    align-items: center;
+}
+
 .deleteButton {
     background-color: lightsalmon;
     margin: 10px;
@@ -6,4 +11,5 @@
     width: fit-content;
     border-radius: 20px;
     font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
 }
