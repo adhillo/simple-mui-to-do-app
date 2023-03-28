@@ -2,7 +2,6 @@ import { useState } from "react";
 import TodoItem from "../components/TodoItem";
 import Todo from "../types/todo";
 import { Container, Typography, Box, TextField, Button } from "@mui/material";
-import { grey } from "@mui/material/colors";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -25,6 +24,14 @@ export default function Home() {
 
   const deleteTodo = (id: number) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
+  const editTodo = (id: number, newTask: string) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, task: newTask } : todo
+      )
+    );
   };
 
   const toggleComplete = (id: number) => {
@@ -57,23 +64,17 @@ export default function Home() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           label="Enter a new task"
-          autoComplete='off'
+          autoComplete="off"
           variant="outlined"
-                 sx={{
+          sx={{
             marginRight: 1,
             "& .MuiOutlinedInput-root": {
               "& fieldset": {
                 borderColor: "white",
               },
-              "&:hover fieldset": {
-                borderColor: "white",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "white",
-              },
             },
             "& .MuiInputLabel-root": {
-              color: "white",
+              color: "grey",
             },
             "& .MuiInputBase-root": {
               color: "white",
@@ -92,6 +93,7 @@ export default function Home() {
             todo={todo}
             toggleComplete={toggleComplete}
             deleteTodo={deleteTodo}
+            editTodo={editTodo}
           />
         ))}
       </div>
